@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://randomgen.us/sitemap.xml
