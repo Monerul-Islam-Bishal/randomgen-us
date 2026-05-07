@@ -7,15 +7,8 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://randomgen.us/privacy/</loc>
-    <lastmod>2026-05-07</lastmod>
+    <loc>https://randomgen.us/sitemap.xml</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://randomgen.us/terms/</loc>
-    <lastmod>2026-05-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
+    <priority>0.1</priority>
   </url>
 </urlset>
