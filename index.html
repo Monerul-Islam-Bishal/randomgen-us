@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Random Number Generator — Free Online Tool</title>
-<meta name="description" content="Generate random numbers instantly. Customizable range from 1-10 to 1-1,000,000. Pick unique numbers, generate sequences, or lottery picks. Free, fast, no signup.">
+<meta name="description" content="Free online random number generator — pick random numbers instantly using true CSPRNG. Custom range 1 to 10M, unique mode, lottery picks, raffles. No signup needed.">
 <link rel="canonical" href="https://random.bmiio.us/">
 <meta property="og:title" content="Random Number Generator — Free Online Tool">
 <meta property="og:description" content="Generate random numbers instantly. Custom range, unique picks, lottery mode. Free online tool.">
@@ -53,7 +53,12 @@
     {"@type":"Question","name":"Can I generate unique non-repeating numbers?","acceptedAnswer":{"@type":"Answer","text":"Yes. Toggle the 'Unique' option on and the generator will ensure no number is picked twice. Great for raffles, lottery picks, or assigning items randomly."}},
     {"@type":"Question","name":"What is the maximum range?","acceptedAnswer":{"@type":"Answer","text":"You can generate numbers from 1 to up to 10 million. The minimum value starts at 1."}},
     {"@type":"Question","name":"Is this truly random?","acceptedAnswer":{"@type":"Answer","text":"Yes. This tool uses cryptographically secure random number generation (CSPRNG), which is the same standard used in security applications. It's more random than typical Math.random() generators."}},
-    {"@type":"Question","name":"Can I generate multiple numbers at once?","acceptedAnswer":{"@type":"Answer","text":"Yes. Use the 'Count' setting to generate anywhere from 1 to 100 numbers at once. Results are sorted ascending for easy reading."}}
+    {"@type":"Question","name":"Can I generate multiple numbers at once?","acceptedAnswer":{"@type":"Answer","text":"Yes. Use the 'Count' setting to generate anywhere from 1 to 100 numbers at once. Results are sorted ascending for easy reading."}},
+    {"@type":"Question","name":"What is CSPRNG?","acceptedAnswer":{"@type":"Answer","text":"CSPRNG stands for Cryptographically Secure Pseudo-Random Number Generator. It uses entropy from OS sources (mouse movements, keyboard timings, hardware noise) to produce unpredictable numbers. It's the gold standard for security applications."}},
+    {"@type":"Question","name":"Is Math.random() safe for random numbers?","acceptedAnswer":{"@type":"Answer","text":"Math.random() is a PRNG — deterministic and predictable if you know the seed. Fine for games, but should never be used for security, cryptography, or situations where unpredictability matters."}},
+    {"@type":"Question","name":"Can I generate numbers for lottery tickets?","acceptedAnswer":{"@type":"Answer","text":"Yes. Set your lottery's range (e.g., 1-69), set the count, and enable Unique mode. Our CSPRNG ensures every number is truly random and independent."}},
+    {"@type":"Question","name":"What is the difference between true random and pseudo-random?","acceptedAnswer":{"@type":"Answer","text":"True random comes from unpredictable physical processes; pseudo-random comes from deterministic algorithms. Our CSPRNG blends both — pseudo-random algorithm seeded by true entropy sources."}},
+    {"@type":"Question","name":"Does this tool store my numbers?","acceptedAnswer":{"@type":"Answer","text":"No. Everything runs client-side in your browser. No data is sent to servers, no cookies are set, and nothing is logged. Your random numbers stay completely private."}}
   ]
 }
 </script>
@@ -287,24 +292,43 @@ details[open] { background: #FFF8E7; }
   <div class="ad-placeholder">📢 AdSense Display — Auto Ads</div>
 
   <div class="neo-card">
-    <h2>Common Uses</h2>
+    <h2>Uses for Random Numbers</h2>
+    <p>Random numbers are essential in many fields. Here are five common applications for any <strong>random number generator</strong>:</p>
     <div class="uses-grid">
-      <div class="uses-item"><h4>🎟️ Raffles & Giveaways</h4><p>Pick winners fairly from any pool of entries. No repeats mode ensures unique selections.</p></div>
-      <div class="uses-item"><h4>🎲 Games & D&D</h4><p>Replace dice rolls, generate random encounters, or simulate coin flips with custom ranges.</p></div>
-      <div class="uses-item"><h4>🔒 Password Generation</h4><p>Use random sequences as the foundation for strong, unpredictable passwords.</p></div>
-      <div class="uses-item"><h4>📊 Sampling & Statistics</h4><p>Select random subsets from a population for surveys, testing, or data analysis.</p></div>
-      <div class="uses-item"><h4>🎯 Lottery Quick Pick</h4><p>Generate a set of lottery numbers. Use unique mode and set your game's range.</p></div>
-      <div class="uses-item"><h4>🧪 Random Testing</h4><p>Generate random inputs for testing software, forms, or validation logic.</p></div>
+      <div class="uses-item"><h4>🎲 Games & Lotteries</h4><p>From lottery quick picks to dice rolls in tabletop RPGs, <strong>random numbers</strong> ensure fair and unpredictable outcomes. Our tool's unique mode is perfect for lottery number selection.</p></div>
+      <div class="uses-item"><h4>📊 Statistical Sampling</h4><p>Researchers use <strong>RNG</strong> to select unbiased samples from populations, ensuring survey results and experiments aren't skewed by selection bias. A <strong>true random</strong> sample is the gold standard.</p></div>
+      <div class="uses-item"><h4>🔒 Cryptography</h4><p>Secure encryption keys, authentication tokens, and session IDs all depend on <strong>random number</strong> generation. Our tool uses <strong>CSPRNG</strong> — the same standard used in security applications.</p></div>
+      <div class="uses-item"><h4>🤔 Decision Making</h4><p>Can't decide where to eat, which movie to watch, or who goes first? Let an <strong>RNG</strong> decide. It's fair, fast, and removes the guesswork from everyday choices.</p></div>
+      <div class="uses-item"><h4>🎓 Education</h4><p>Teachers use random generators for random student selection, creating practice problems with varying numbers, and demonstrating probability concepts in math and statistics classes.</p></div>
     </div>
   </div>
 
   <div class="ad-placeholder">📢 AdSense In-Article</div>
 
   <div class="neo-card">
-    <h2>How It Works</h2>
-    <p>This random number generator uses <strong>cryptographically secure random number generation</strong> (CSPRNG) via your browser's <code>window.crypto.getRandomValues()</code> API. Unlike <code>Math.random()</code>, which uses a pseudo-random algorithm seeded by the system clock, CSPRNG draws entropy from the operating system's random sources — making it suitable for security-critical applications.</p>
-    <p>Each number is independently generated. When "Unique Numbers" is turned on, the tool uses a Fisher-Yates shuffle algorithm to pick numbers without replacement, guaranteeing no duplicates.</p>
-    <p>There's no server-side processing — everything runs in your browser. No data is sent, stored, or logged. Your numbers stay private.</p>
+    <h2>How Our Random Number Generator Works</h2>
+    <p>This <strong>random number generator</strong> uses <strong>cryptographically secure random number generation</strong> (CSPRNG) via your browser's <code>window.crypto.getRandomValues()</code> API. This is the same standard used in banking, encryption, and security-critical applications worldwide. Every <strong>random number</strong> produced is mathematically independent of the last.</p>
+    <p>The key distinction is <strong>true random</strong> vs pseudo-randomness. Standard <code>Math.random()</code> uses a deterministic algorithm seeded by the system clock — meaning if you knew the seed, you could predict every number. Our <strong>CSPRNG</strong>-based <strong>RNG</strong> draws entropy from your operating system's hardware random sources (keyboard timing, mouse movements, environmental noise), making it genuinely unpredictable.</p>
+    <p>When "Unique Numbers" is turned on, the tool uses a Fisher-Yates shuffle algorithm to pick numbers without replacement, guaranteeing no duplicates. Perfect for raffles, lottery picks, and sampling.</p>
+    <p>Everything runs in your browser — no server-side processing, no data storage, no logging. Your numbers stay completely private.</p>
+  </div>
+
+  <div class="neo-card">
+    <h2>Random Number Generator vs Pseudo-Random</h2>
+    <p>Not all <strong>random number</strong> generators are created equal. Understanding the difference between a <strong>random number generator</strong> and a pseudo-random number generator (PRNG) matters for your use case:</p>
+    <div class="accuracy-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1rem 0;">
+      <div class="uses-item"><h4>✅ True Random (CSPRNG) — Our Tool</h4><p>Uses hardware entropy sources (OS-level randomness). Unpredictable even with full knowledge of the algorithm. Suitable for cryptography, gambling, and security. Our tool uses <code>window.crypto.getRandomValues()</code>.</p></div>
+      <div class="uses-item"><h4>⚠️ Pseudo-Random (PRNG) — Math.random()</h4><p>Uses a deterministic mathematical formula (e.g., Xorshift, Mersenne Twister) seeded by the system clock. Fast and good enough for games or simulations, but predictable if the seed is known. Not suitable for security.</p></div>
+    </div>
+  </div>
+
+  <div class="neo-card">
+    <h2>Types of Random Number Generators</h2>
+    <p>There are two main categories of <strong>RNG</strong> technology:</p>
+    <div class="accuracy-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1rem 0;">
+      <div class="uses-item"><h4>🔐 True Random Number Generator (TRNG)</h4><p>TRNGs extract randomness from physical processes — atmospheric noise, radioactive decay, thermal noise, or quantum phenomena. They produce genuinely unpredictable output but require specialized hardware. Our browser-based CSPRNG is the closest software approximation available on standard devices.</p></div>
+      <div class="uses-item"><h4>💻 Pseudo-Random Number Generator (PRNG)</h4><p>PRNGs use deterministic algorithms to produce sequences that <em>appear</em> random. They're fast, reproducible (useful for testing), and efficient. Common algorithms include Mersenne Twister (Python's default), Xorshift, and Linear Congruential Generators. However, they're not suitable for security applications.</p></div>
+    </div>
   </div>
 
   <div class="neo-card">
@@ -314,6 +338,11 @@ details[open] { background: #FFF8E7; }
     <details><summary>What is the maximum range?</summary><p>You can generate numbers from 1 to up to 10 million. The minimum value starts at 1.</p></details>
     <details><summary>Is this truly random?</summary><p>Yes. This tool uses cryptographically secure random number generation (CSPRNG), the same standard used in security applications. It's far more random than Math.random().</p></details>
     <details><summary>Can I generate multiple numbers at once?</summary><p>Yes. Use the 'Count' setting to generate anywhere from 1 to 100 numbers at once. With unique mode on, each number will be different.</p></details>
+    <details><summary>What is CSPRNG?</summary><p>CSPRNG stands for Cryptographically Secure Pseudo-Random Number Generator. It uses entropy from the operating system (mouse movements, keyboard timings, hardware noise) to produce random numbers that are unpredictable even with full knowledge of the algorithm. It's the gold standard for security applications.</p></details>
+    <details><summary>Is Math.random() safe for random numbers?</summary><p>Math.random() is a pseudo-random number generator (PRNG) — it's deterministic and predictable if you know the algorithm and seed. It's fine for games and simulations but should never be used for security, cryptography, or anything where unpredictability matters.</p></details>
+    <details><summary>Can I generate numbers for lottery tickets?</summary><p>Yes. Set your lottery's range (e.g., 1–69 for Powerball), set the count to the number of picks, and enable Unique mode. Our CSPRNG ensures every number is truly random and independent.</p></details>
+    <details><summary>What is the difference between true random and pseudo-random?</summary><p>True random numbers come from unpredictable physical processes (atmospheric noise, radioactive decay). Pseudo-random numbers come from deterministic algorithms that <em>appear</em> random but are reproducible. Our tool uses CSPRNG, which is pseudo-random in implementation but draws from true entropy sources, making it effectively unpredictable.</p></details>
+    <details><summary>Does this tool store my generated numbers?</summary><p>No. Everything runs client-side in your browser. No data is sent to any server, no cookies are set for the numbers, and nothing is logged. Your random numbers stay completely private.</p></details>
   </div>
 
   <footer class="footer">
